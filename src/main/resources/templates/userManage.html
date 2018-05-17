@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<!--http://www.thymeleaf.org将镜头转化为动态的视图,基础语法就是需要进行动态处理的元素使用“th:”前缀-->
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta content="text/html;charset=UTF-8"/>
+    <title>影视节目查询系统</title>
+    <!--<link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>-->
+</head>
+<body>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">当前用户</h3>
+    </div>
+    <div class="panel-body">
+        <span th:text="${user.name}"></span>
+    </div>
+</div>
+<div th:if="${not #lists.isEmpty(users)}">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">列表</h3>
+        </div>
+        <div class="panel-body">
+            <ul class="list-group">
+                <li class="list-group-item" th:each="u : ${users}">
+                    <span th:text="${u.name}"></span>
+                    <button class="btn" th:onlick="'getName(\''+${u.name}+'\');'">获得名字</button>
+                </li>
+            </ul>
+            <table>
+                <thead>
+                <th>工号</th>
+                <th>名称</th>
+                <th>角色</th>
+                <th>状态</th>
+                </thead>
+                <tbody>
+                <tr th:each="u : ${users}">
+                    <td th:text="${u.userID}"></td>
+                    <td th:text="${u.name}"></td>
+                    <td th:text="${u.role} == 0 ?'管理员':'制片人'"></td>
+                    <td th:text="${u.state} == 0 ?'启用':'禁用'"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--<script th:src="@{/jquery/jquery-3.2.1.min.js}"></script>-->
+<script th:inline="javascript">
+    var single = [[${user}]];
+    console.log(single.name);
+    function getName(name) {
+        console.log(name);
+    }
+</script>
+</body>
+</html>
