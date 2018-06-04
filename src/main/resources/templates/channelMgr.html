@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<!--http://www.thymeleaf.org将镜头转化为动态的视图,基础语法就是需要进行动态处理的元素使用“th:”前缀-->
+<html xmlns:th="http://www.thymeleaf.org" >
+<head th:include="head::header"></head>
+<body>
+<div class="container">
+    <div th:replace="common :: #navbar"></div>
+    <div th:replace="common :: #leftmenu"></div>
+    <div class="maindiv">
+        <div class="panel panel-primary">
+            <div class="div2">
+                <ul class="mtree skinny csl">
+                    <li><a href="#">所有频道</a>
+                        <ul>
+                            <li th:if="${not #lists.isEmpty(channels)}" th:each="c : ${channels}"><a href="#" th:attr="_id=${c.id}" th:text="${c.name}"></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="div2">
+                <span>当前频道</span>
+                <input>
+                <button id="update">改名</button>
+                <button id="delete">删除</button>
+                <br/>
+                <select>
+                    <option value="0">新增频道</option>
+                    <option value="1">新增栏目</option>
+                </select>
+                <input>
+                <button id="add">增加</button>
+                <br/>
+                <span>栏目转移</span>
+                <select class="csel">
+                    <option>选择频道</option>
+                    <option th:if="${not #lists.isEmpty(channels)}" th:each="c : ${channels}" th:value="${c.id}" th:text="${c.name}"></option>
+                </select>
+                <button id="transe">转移</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="common :: #footer"></div>
+<div th:replace="common :: #includeJs"></div>
+<!--<script th:src="@{/jquery/jquery-3.2.1.min.js}"></script>-->
+<script th:inline="javascript">
+    var single = [[${user}]];
+    console.log(single.name);
+    function getName(name) {
+        console.log(name);
+    }
+</script>
+</body>
+</html>

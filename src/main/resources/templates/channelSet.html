@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<!--http://www.thymeleaf.org将镜头转化为动态的视图,基础语法就是需要进行动态处理的元素使用“th:”前缀-->
+<html xmlns:th="http://www.thymeleaf.org" >
+<head th:include="head::header"></head>
+<body>
+<div class="container">
+    <div th:replace="common :: #navbar"></div>
+    <div th:replace="common :: #leftmenu"></div>
+    <div class="maindiv">
+        <div class="panel panel-primary">
+            <ul class="mtree skinny csl">
+                <li><a href="#">刘XX</a>
+                    <ul>
+                        <li><a href="#">CCTV1</a>
+                            <ul>
+                                <li><a href="#">新闻联播城市天气预报</a></li>
+                                <li><a href="#">早间新闻滚动城市天气预报</a></li>
+                                <li><a href="#">晚间世界城市天气预报(00:08)</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">赵XX</a>
+                    <ul>
+                        <li><a href="#">CCTV2</a>
+                            <ul>
+                                <li><a href="#">朝闻天下城市天气预报(06:55)</a></li>
+                                <li><a href="#">朝闻天下城市天气预报(07:55)</a></li>
+                                <li><a href="#">朝文天下城市天气预报(08:55)</a></li>
+                                <li><a href="#">午间城市天气预报(12:27)</a></li>
+                                <li><a href="#">午间滚动城市天气预报(12:27)</a></li>
+                                <li><a href="#">朝闻天下城市天气预报(Tmax)</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+<div th:replace="common :: #footer"></div>
+<div th:replace="common :: #includeJs"></div>
+<!--<script th:src="@{/jquery/jquery-3.2.1.min.js}"></script>-->
+<script th:inline="javascript">
+    var single = [[${user}]];
+    console.log(single.name);
+    function getName(name) {
+        console.log(name);
+    }
+</script>
+</body>
+</html>

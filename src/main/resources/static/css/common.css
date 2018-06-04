@@ -1,0 +1,141 @@
+#leftmenu{
+    float: left;
+    width: 23%;
+}
+#leftmenu .mtree {
+  background: #EEE;
+  margin: 20px auto;
+  max-width: 320px;
+  border-radius: 3px;
+  margin-top: 30px;
+}
+.mtree{
+    font-size: 25px;
+}
+.mtree ul{
+    font-size: 20px;
+}
+#navbar{
+    background: #18b6ea;
+    height: 80px;
+    text-align: center;
+    padding-top: 8px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.pull-right {
+    position: relative;
+    float: right !important;
+    margin-right: 15px;
+    top: -40px;
+}
+.divider {
+    height: 1px;
+    margin: 8px 1px;
+    overflow: hidden;
+    background-color: #e5e5e5;
+    border-bottom: 1px solid #e4e4e4;
+}
+.dropdown-menu {
+    display:none;
+    position: absolute;
+    top: 100%;
+    margin-top: 5px;
+    list-style: none;
+    text-align: left;
+    min-width: 160px;
+    padding: 4px 0;
+    margin: 1px 0 0;
+    background-color: #ffffff;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-background-clip: padding;
+    margin-left: -110px;
+}
+.dropdown-menu a {
+    display: block;
+    padding: 3px 15px;
+    color: #333333;
+}
+.caret {
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: top;
+    border-top: 4px solid #000000;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    filter: alpha(opacity=30);
+    margin-top: 8px;
+}
+.btn-group .btn{
+    padding: 5px;
+    background: white;
+    border-radius: 5px;
+    width: inherit;
+    display: block;
+    font-size: 20px;
+}
+.container{
+    width: 100%;
+    overflow: hidden;
+    min-height: 900px;
+}
+.params,input.params{
+    display: inline-block;
+    width: 100px;
+}
+span.params{
+    text-align: center;
+}
+.panel-body table{
+    width: 100%;
+}
+table thead{
+    background: #afdcea;
+}
+.panel-body table thead th,.panel-body table tbody td{
+    font-size: 20px;
+    text-align: center;
+}
+button{
+    margin-left: 10px;
+    height: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+#footer{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    height: 60px;
+    padding: 20px;
+    border-top: 1px solid #dddddd;
+}
+.maindiv{
+    width: 76%;
+    float: left;
+    min-height: 1000px;
+}
+.panel{
+    overflow: hidden;
+}
+.div2{
+    width: 50%;
+    float: left;
+}
+.div2 span{
+    margin-right: 36px;
+}
+.div2 select{
+    width: 100px;
+    height: 40px;
+}
+.div2 input{
+    height: 40px;
+}
+.div2 select.csel{
+    width: 172px;
+}

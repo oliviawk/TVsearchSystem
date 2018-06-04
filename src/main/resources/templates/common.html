@@ -1,0 +1,65 @@
+<div id="header">
+    <meta charset="UTF-8" />
+    <title>影视节目查询系统</title>
+    <!--<link rel="shortcut icon" th:href="@{/static/img/favicon.gif}" type="image/gif" />-->
+
+    <link th:href="@{/css/foundation.css}" rel="stylesheet"/>
+    <link th:href="@{/css/mtree.css}" rel="stylesheet"/>
+    <link th:href="@{/css/common.css}" rel="stylesheet"/>
+</div>
+
+<div id="navbar">
+    <h1>影视节目查询系统</h1>
+    <div class="btn-group pull-right">
+        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+            <!--<span class="hidden-phone"  th:text="${session.user.name}"></span>-->
+            <span class="hidden-phone">XXX</span>
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="#" class="changepwdBtn">修改密码</a></li>
+            <li class="divider"></li>
+            <li><a href="user/logout">退出</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="leftmenu">
+    <ul class="mtree bubba csl active">
+        <li><a href="#">数据查询</a>
+            <ul>
+                <li><a href="#">城市预报</a></li>
+                <li><a href="#">总表数据</a></li>
+            </ul>
+        </li>
+        <li><a href="#">管理中心</a>
+            <ul>
+                <li><a href="#">用户管理</a></li>
+                <li><a href="#">节目管理</a>
+                    <ul>
+                        <li><a href="#">频道管理</a></li>
+                        <li><a href="#">栏目管理</a></li>
+                        <li><a href="#">顺序配置</a></li>
+                        <li><a href="#">频道配置</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">内容管理</a>
+                    <ul>
+                        <li><a href="#">站点配置</a></li>
+                        <li><a href="#">栏目配置</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div id="footer">
+    Copyright © 中国气象局公共气象服务中心(数据应用室) 2018-2020
+</div>
+
+<div id="includeJs">
+    <script src="/js/jquery-1.11.2.min.js"></script>
+    <script th:src="@{/js/jquery.velocity.min.js}"></script>
+    <script th:src="@{/js/mtree.js}"></script>
+</div>
