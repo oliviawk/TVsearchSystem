@@ -9,46 +9,49 @@
     <div class="maindiv">
         <div class="panel panel-primary">
             <div class="div2">
-                <ul class="mtree skinny csl">
-                    <li><a href="#">所有频道</a>
-                        <ul>
-                            <li th:if="${not #lists.isEmpty(channels)}" th:each="c : ${channels}"><a href="#" th:attr="_id=${c.id}" th:text="${c.name}"></a></li>
-                        </ul>
-                    </li>
-                </ul>
+                <div>
+                    <ul class="mtree skinny csl">
+                        <li><a href="#" _id="">所有频道</a>
+                            <ul>
+                                <li th:if="${not #lists.isEmpty(channels)}" th:each="c : ${channels}"><a href="#" th:attr="_id=${c.id}" th:text="${c.name}"></a>
+                                    <ul></ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="div2">
-                <span>当前频道</span>
-                <input>
+                <span class="currentSpan">当前频道</span>
+                <input id="oldname" type="text">
+                <input type="hidden" id="fid">
+                <input type="hidden" id="cid">
                 <button id="update">改名</button>
                 <button id="delete">删除</button>
                 <br/>
-                <select>
+                <select id="ctype">
                     <option value="0">新增频道</option>
                     <option value="1">新增栏目</option>
                 </select>
-                <input>
+                <input id="newname" type="text">
                 <button id="add">增加</button>
                 <br/>
                 <span>栏目转移</span>
-                <select class="csel">
-                    <option>选择频道</option>
+                <select class="csel" id="csel">
+                    <option value="">选择频道</option>
                     <option th:if="${not #lists.isEmpty(channels)}" th:each="c : ${channels}" th:value="${c.id}" th:text="${c.name}"></option>
                 </select>
                 <button id="transe">转移</button>
+                <br/>
+                <span class="error">error</span>
             </div>
         </div>
     </div>
 </div>
+<div th:replace="common :: #msgModal"></div>
 <div th:replace="common :: #footer"></div>
 <div th:replace="common :: #includeJs"></div>
 <!--<script th:src="@{/jquery/jquery-3.2.1.min.js}"></script>-->
-<script th:inline="javascript">
-    var single = [[${user}]];
-    console.log(single.name);
-    function getName(name) {
-        console.log(name);
-    }
-</script>
+<script src="/js/cmgr.js"></script>
 </body>
 </html>

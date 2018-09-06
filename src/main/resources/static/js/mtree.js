@@ -31,12 +31,12 @@
   // Set mtree-active class on list items for last opened element
   $('.mtree li > *:first-child').on('click.mtree-active', function(e){
     if($(this).parent().hasClass('mtree-closed')) {
-      $('.mtree-active').not($(this).parent()).removeClass('mtree-active');
+      $(this).parents(".mtree").find('.mtree-active').not($(this).parent()).removeClass('mtree-active');
       $(this).parent().addClass('mtree-active');
     } else if($(this).parent().hasClass('mtree-open')){
       $(this).parent().removeClass('mtree-active'); 
     } else {
-      $('.mtree-active').not($(this).parent()).removeClass('mtree-active');
+      $(this).parents(".mtree").find('.mtree-active').not($(this).parent()).removeClass('mtree-active');
       $(this).parent().toggleClass('mtree-active'); 
     }
   });
@@ -140,3 +140,10 @@
     }
   }
 }(jQuery, this, this.document));
+
+$(function(){
+    var url = window.document.location.pathname;
+    $("a[href='"+url+"']").parents("ul").show().height("auto");
+    $("a[href='"+url+"']").parents("li").removeClass("mtree-closed").addClass("mtree-open");
+    $("a[href='"+url+"']").parent().removeClass("mtree-open").addClass("mtree-active");
+})

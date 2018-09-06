@@ -226,3 +226,6 @@ ul.mtree.nix ul > li {
 ul.mtree.nix li {
   list-style: disc;
 }
+ul.mtree.skinny .mtree-level-1 li.mtree-active > a:first-child,ul.mtree.skinny .mtree-level-2 li.mtree-active > a:first-child{
+    background:#e8e8e8;
+}

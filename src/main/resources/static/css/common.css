@@ -123,8 +123,10 @@ button{
     overflow: hidden;
 }
 .div2{
-    width: 50%;
     float: left;
+}
+.panel > :first-child{
+    width: 45%;
 }
 .div2 span{
     margin-right: 36px;
@@ -133,9 +135,70 @@ button{
     width: 100px;
     height: 40px;
 }
-.div2 input{
+.div2 input[type="text"]{
     height: 40px;
+    width: 172px;
+    display: inline-block;
 }
 .div2 select.csel{
     width: 172px;
+}
+
+.div2 span.error{
+    display: none;
+    margin-left: 10px;
+    margin-right: 0;
+}
+ul.mtree.skinny a:active {
+    text-decoration: underline;
+}
+ul.mtree{
+    padding:0;
+}
+ul.mtree.skinny{
+    padding-right:20px;
+}
+
+.modal{
+	display: none;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.modal div{
+	width: 250px;
+    will-change: transform, opacity;
+    position: relative;
+    padding: 1.8rem;
+    background: #c6d8af;
+    background-clip: padding-box;
+    box-shadow: 0 12px 15px 0 rgba(0,0,0,0.25);
+    font-weight: bold;
+    text-align: center;
+}
+.modal span{
+    font-size: 25px;
+    color: #4CAF50;
+}
+.modal a{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.5rem;
+    padding: 0.4rem;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+}
+.modal svg{
+    width: 24px;
+    fill: #fff;
+    pointer-events: none;
+    vertical-align: top;
 }
